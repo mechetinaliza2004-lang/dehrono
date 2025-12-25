@@ -9,6 +9,7 @@ body {
     background-color: #A2A1A1;
 }
 
+/* СТИЛИ БЛОКА 1 */
 .main-canvas {
     position: relative;
     width: 1280px;
@@ -95,6 +96,7 @@ body {
     text-align: left;
 }
 
+/* СТИЛИ БЛОКА 2 */
 .mission-canvas {
     position: relative;
     width: 1280px;
@@ -162,4 +164,56 @@ body {
     width: calc(100% - 32px);
     height: auto;
     display: block;
+}
+
+/* СТИЛИ БЛОКА 3 */
+.gadgets-canvas {
+    position: relative;
+    width: 1280px;
+    height: 984px;
+    background-color: #A2A1A1;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.gadgets-subtitle {
+    position: absolute;
+    left: 59px;
+    top: 0;
+    margin: 0;
+    font-family: 'ArialCustom', sans-serif;
+    font-size: 29px;
+    font-weight: 400;
+    color: #000000;
+    z-index: 10;
+}
+
+.bg-logo {
+    position: absolute;
+    top: 95px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1293px;
+    height: 226px;
+    z-index: 1;
+}
+
+.boxes-img {
+    position: absolute;
+    top: 22px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1409px;
+    height: 940px;
+    z-index: 5;
+    pointer-events: none;
+}
+
+.bottom-logo {
+    position: absolute;
+    right: 59px;
+    bottom: 92px;
+    width: 599px;
+    height: 46px;
+    z-index: 10;
 }
