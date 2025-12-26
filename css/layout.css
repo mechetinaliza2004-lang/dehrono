@@ -1,18 +1,30 @@
 * {
     box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+}
+
+:root {
+    --bg-color: #A2A1A1;
+    --card-color: #D9D9D9;
 }
 
 body {
+    margin: 0;
+    padding: 0;
     width: 100%;
-    background-color: #A2A1A1;
+    background-color: var(--bg-color);
     overflow-x: hidden;
 }
 
-.main-canvas {
+.main-canvas,
+.mission-canvas,
+.gadgets-canvas {
     position: relative;
     width: 100vw;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.main-canvas {
     height: 69.84vw;
 }
 
@@ -21,11 +33,12 @@ body {
     left: 4.68vw;
     top: 7.18vw;
     width: 46.79vw;
+    height: auto;
 }
 
-.logo-box img {
+.logo-img {
     width: 100%;
-    height: auto;
+    display: block;
 }
 
 .hero-card {
@@ -34,7 +47,7 @@ body {
     height: 50vw;
     left: 4.68vw;
     top: 14.29vw;
-    background-color: #D9D9D9;
+    background-color: var(--card-color);
     border-radius: 3.12vw;
     z-index: 1;
 }
@@ -44,22 +57,27 @@ body {
     right: 1.48vw;
     top: 10.07vw;
     width: 74.37vw;
+    height: 58.59vw;
     z-index: 10;
     pointer-events: none;
 }
 
-.pearl-layer img {
+.pearl-img {
     width: 100%;
-    height: auto;
+    height: 100%;
+    object-fit: contain;
 }
 
 .hero-title {
     position: absolute;
     top: 6.01vw;
     left: 3.59vw;
+    margin: 0;
+    font-family: 'ArialCustom', sans-serif;
     font-size: 2.26vw;
+    font-weight: 400;
+    color: #000000;
     line-height: 1.1;
-    font-family: sans-serif;
 }
 
 .info-badge {
@@ -70,19 +88,21 @@ body {
     bottom: 3.28vw;
     background-color: #FFFFFF;
     border-radius: 1.95vw;
+    padding: 2.34vw;
     display: flex;
     align-items: center;
-    padding: 2.3vw;
 }
 
-.info-badge p {
+.info-text {
+    font-family: 'ArialCustom', sans-serif;
     font-size: 1.25vw;
+    font-weight: 400;
+    color: #000000;
     line-height: 1.3;
+    margin: 0;
 }
 
 .mission-canvas {
-    position: relative;
-    width: 100vw;
     height: 50.93vw;
 }
 
@@ -90,9 +110,24 @@ body {
     position: absolute;
     left: 4.6vw;
     top: 0;
+    margin: 0;
+    font-family: 'ArialCustom', sans-serif;
     font-size: 2.26vw;
+    font-weight: 400;
+    color: #000000;
+    line-height: 1.2;
     max-width: 62.5vw;
-    font-family: sans-serif;
+}
+
+.mission-title {
+    position: absolute;
+    right: 4.92vw;
+    top: 4.6vw;
+    margin: 0;
+    font-family: 'ArialCustom', sans-serif;
+    font-size: 2.26vw;
+    font-weight: 400;
+    color: #000000;
 }
 
 .cards-container {
@@ -104,16 +139,46 @@ body {
 }
 
 .category-card {
+    position: relative;
     width: 25.54vw;
     height: 29.68vw;
-    background-color: #D9D9D9;
+    background-color: var(--card-color);
     border-radius: 1.95vw;
 }
 
+.category-name {
+    position: absolute;
+    left: 1.25vw;
+    top: 2.57vw;
+    font-family: 'ArialCustom', sans-serif;
+    font-size: 1.25vw;
+    font-weight: 400;
+    color: #000000;
+}
+
+.category-img {
+    position: absolute;
+    left: 1.25vw;
+    bottom: 1.25vw;
+    width: calc(100% - 2.5vw);
+    height: auto;
+    display: block;
+}
+
 .gadgets-canvas {
-    position: relative;
-    width: 100vw;
     height: 76.87vw;
+}
+
+.gadgets-subtitle {
+    position: absolute;
+    left: 4.6vw;
+    top: 0;
+    margin: 0;
+    font-family: 'ArialCustom', sans-serif;
+    font-size: 2.26vw;
+    font-weight: 400;
+    color: #000000;
+    z-index: 10;
 }
 
 .bg-logo {
@@ -122,6 +187,8 @@ body {
     left: 50%;
     transform: translateX(-50%);
     width: 101vw;
+    height: auto;
+    z-index: 1;
 }
 
 .boxes-img {
@@ -130,33 +197,104 @@ body {
     left: 50%;
     transform: translateX(-50%);
     width: 110vw;
+    height: auto;
     z-index: 5;
+    pointer-events: none;
 }
 
-@media screen and (max-width: 1023px) {
+.bottom-logo {
+    position: absolute;
+    right: 4.6vw;
+    bottom: 7.18vw;
+    width: 46.79vw;
+    height: auto;
+    z-index: 10;
+}
+
+@media (max-width: 1024px) {
+    .hero-title {
+        font-size: 3vw;
+    }
+}
+
+@media (max-width: 768px) {
     .main-canvas {
         height: 66.79vw;
     }
 
+    .logo-box {
+        width: 48.17vw;
+        left: 3.25vw;
+        top: 6.11vw;
+    }
+
     .hero-card {
+        width: 93.09vw;
+        height: 47vw;
+        left: 3.25vw;
+        top: 12.63vw;
         border-radius: 5.2vw;
+    }
+
+    .hero-title {
+        font-size: 3.12vw;
+        left: 3.77vw;
+        top: 5.85vw;
+    }
+
+    .pearl-layer {
+        width: 76.56vw;
+        height: 55.2vw;
+        top: 8.59vw;
     }
 
     .info-badge {
         width: 32.16vw;
         height: 11.58vw;
+        padding: 1.95vw;
+        border-radius: 3.25vw;
     }
 
-    .hero-title {
-        font-size: 3.12vw;
+    .info-text {
+        font-size: 1.43vw;
     }
 
     .mission-canvas {
         height: 46.22vw;
     }
+
+    .mission-desc {
+        font-size: 2.08vw;
+        left: 3.25vw;
+    }
+
+    .mission-title {
+        font-size: 2.08vw;
+        top: 2.47vw;
+        right: 3.25vw;
+    }
+
+    .cards-container {
+        top: 13.28vw;
+        left: 3.25vw;
+        gap: 7vw;
+    }
+
+    .category-card {
+        width: 26.3vw;
+        height: 27.99vw;
+    }
+
+    .gadgets-canvas {
+        height: 72.78vw;
+    }
+
+    .boxes-img {
+        width: 113.4vw;
+    }
 }
 
-@media screen and (max-width: 767px) {
+@media (max-width: 480px) {
     .main-canvas {
         height: 71.56vw;
     }
@@ -181,15 +319,20 @@ body {
         left: 3.43vw;
     }
 
+    .pearl-layer {
+        width: 76.56vw;
+        height: 55.62vw;
+        top: 9.68vw;
+    }
+
     .info-badge {
         width: 31.87vw;
         height: 11.25vw;
-        left: 3.43vw;
-        bottom: 2.5vw;
-        border-radius: 1.5vw;
+        padding: 1.5vw;
+        border-radius: 1.56vw;
     }
 
-    .info-badge p {
+    .info-text {
         font-size: 1.25vw;
     }
 
@@ -199,12 +342,15 @@ body {
 
     .mission-desc {
         font-size: 3.12vw;
-        left: 3.43vw;
+        max-width: 62.5vw;
+    }
+
+    .mission-title {
+        font-size: 3.12vw;
     }
 
     .cards-container {
         top: 26.87vw;
-        left: 3.43vw;
         gap: 5.62vw;
     }
 
@@ -214,17 +360,27 @@ body {
         border-radius: 3.12vw;
     }
 
+    .category-name {
+        font-size: 1.56vw;
+    }
+
     .gadgets-canvas {
-        height: 83.1vw;
+        height: 83.12vw;
     }
 
     .bg-logo {
-        width: 102vw;
-        top: 13.7vw;
+        width: 101.8vw;
+        top: 13.75vw;
     }
 
     .boxes-img {
-        width: 118vw;
-        top: 10.3vw;
+        width: 118.75vw;
+        top: 10.31vw;
+    }
+
+    .bottom-logo {
+        width: 43.75vw;
+        bottom: 7.81vw;
+        right: 3.43vw;
     }
 }
