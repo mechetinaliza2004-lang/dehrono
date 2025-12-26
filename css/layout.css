@@ -9,7 +9,6 @@ body {
     background-color: #A2A1A1;
 }
 
-/* СТИЛИ БЛОКА 1 */
 .main-canvas {
     position: relative;
     width: 1280px;
@@ -96,7 +95,6 @@ body {
     text-align: left;
 }
 
-/* СТИЛИ БЛОКА 2 */
 .mission-canvas {
     position: relative;
     width: 1280px;
@@ -166,7 +164,6 @@ body {
     display: block;
 }
 
-/* СТИЛИ БЛОКА 3 */
 .gadgets-canvas {
     position: relative;
     width: 1280px;
@@ -216,4 +213,127 @@ body {
     width: 599px;
     height: 46px;
     z-index: 10;
+}
+
+@media (max-width: 768px) {
+
+    .main-canvas,
+    .mission-canvas,
+    .gadgets-canvas {
+        width: 768px;
+    }
+
+    .main-canvas {
+        height: 513px;
+    }
+
+    .logo-box {
+        width: 370px;
+        height: 26px;
+        left: 25px;
+        top: 47px;
+    }
+
+    .hero-card {
+        width: 715px;
+        height: 361px;
+        left: 25px;
+        top: 97px;
+        border-radius: 40px;
+    }
+
+    .hero-title {
+        font-size: 24px;
+        top: 45px;
+        left: 29px;
+    }
+
+    .pearl-layer {
+        width: 588px;
+        height: 424px;
+        top: 66px;
+        right: 0;
+    }
+
+    .info-badge {
+        width: 247px;
+        height: 89px;
+        left: 29px;
+        bottom: 18px;
+        padding: 15px;
+        border-radius: 25px;
+    }
+
+    .info-text {
+        font-size: 11px;
+    }
+
+    .mission-canvas {
+        height: 355px;
+    }
+
+    .mission-desc {
+        font-size: 16px;
+        left: 25px;
+        top: 0;
+        max-width: 600px;
+    }
+
+    .mission-title {
+        font-size: 16px;
+        top: 19px;
+        right: 25px;
+    }
+
+    .cards-container {
+        top: 102px;
+        left: 25px;
+        gap: 54px;
+    }
+
+    .category-card {
+        width: 202px;
+        height: 215px;
+    }
+
+    .category-name {
+        font-size: 12px;
+        left: 9px;
+        top: 18px;
+    }
+
+    .category-img {
+        width: calc(100% - 18px);
+        left: 9px;
+        bottom: 9px;
+    }
+
+    .gadgets-canvas {
+        height: 559px;
+    }
+
+    .gadgets-subtitle {
+        font-size: 16px;
+        left: 25px;
+        top: 0;
+    }
+
+    .bg-logo {
+        width: 1293px;
+        height: 226px;
+        top: 95px;
+    }
+
+    .boxes-img {
+        width: 871px;
+        height: 530px;
+        top: 13px;
+    }
+
+    .bottom-logo {
+        width: 370px;
+        height: 26px;
+        right: 25px;
+        bottom: 56px;
+    }
 }
