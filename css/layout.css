@@ -31,6 +31,18 @@
     }
 }
 
+@keyframes slideFromRightCenter {
+    from {
+        opacity: 0;
+        transform: translateX(calc(-50% + 200px));
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(-50%);
+    }
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -236,23 +248,23 @@ body {
     position: absolute;
     top: 7.42vw;
     left: 50%;
-    transform: translateX(-50%);
     width: 101vw;
     height: auto;
     z-index: 1;
-    animation: slideFromRight 2s ease-out forwards;
+    transform: translateX(-50%);
+    animation: slideFromRightCenter 2s ease-out forwards;
 }
 
 .boxes-img {
     position: absolute;
     top: 1.71vw;
     left: 50%;
-    transform: translateX(-50%);
     width: 110vw;
     height: auto;
     z-index: 5;
     pointer-events: none;
-    animation: slideFromRight 2s ease-out forwards;
+    transform: translateX(-50%);
+    animation: slideFromRightCenter 2s ease-out forwards;
     transition: transform 1s ease;
 }
 
