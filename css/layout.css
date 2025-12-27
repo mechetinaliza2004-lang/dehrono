@@ -168,17 +168,19 @@ body {
 .category-card .hover-img {
     position: absolute;
     left: 50%;
-    transform: translateX(-50%);
     bottom: 1.25vw;
-    width: 85%;
+    transform: translateX(-50%);
+    width: calc(100% - 2.5vw);
     height: auto;
     top: auto;
+    display: block;
     transition: opacity 0.5s ease;
 }
 
 .category-card .hover-img {
     opacity: 0;
     z-index: 2;
+    pointer-events: none;
 }
 
 .category-card:hover .main-img {
@@ -230,12 +232,7 @@ body {
     z-index: 10;
 }
 
-.main-img,
-.logo-box .hover-img,
-.pearl-layer .hover-img,
-.bg-logo-wrapper .hover-img,
-.boxes-wrapper .hover-img,
-.bottom-logo-wrapper .hover-img {
+.main-img {
     width: 100%;
     height: auto;
     display: block;
@@ -250,7 +247,9 @@ body {
     position: absolute;
     top: 0;
     left: 0;
+    width: 100%;
     opacity: 0;
+    transition: opacity 0.5s ease;
 }
 
 .logo-box:hover .main-img,
@@ -318,7 +317,7 @@ body {
 
     .category-img,
     .category-card .hover-img {
-        width: 90%;
         bottom: 1.5vw;
+        width: calc(100% - 3vw);
     }
 }
