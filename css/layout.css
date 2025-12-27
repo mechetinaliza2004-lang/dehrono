@@ -173,7 +173,8 @@ body {
     bottom: 1.25vw;
     transform: translateX(-50%);
     width: calc(100% - 2.5vw);
-    height: auto;
+    height: 20vw;
+    object-fit: contain;
     top: auto;
     transition: opacity 0.5s ease;
 }
@@ -181,6 +182,7 @@ body {
 .category-card .hover-img {
     opacity: 0;
     z-index: 5;
+    pointer-events: none;
 }
 
 .category-card:hover .main-img {
@@ -320,6 +322,7 @@ body {
 
     .category-img,
     .category-card .hover-img {
+        height: 20vw;
         bottom: 1.5vw;
         width: calc(100% - 3vw);
     }
