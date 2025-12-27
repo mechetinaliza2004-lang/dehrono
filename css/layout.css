@@ -193,12 +193,14 @@ body {
     font-size: 1.25vw;
 }
 
-.category-img {
+.category-card .main-img,
+.category-card .hover-img {
     position: absolute;
     left: 1.25vw;
     bottom: 1.25vw;
     width: calc(100% - 2.5vw);
     height: auto;
+    display: block;
     transition: opacity 0.5s ease;
 }
 
@@ -247,9 +249,6 @@ body {
 
 .main-img,
 .hover-img {
-    width: 100%;
-    height: auto;
-    display: block;
     transition: opacity 0.5s ease;
 }
 
@@ -257,15 +256,19 @@ body {
     position: absolute;
     top: 0;
     left: 0;
+    width: 100%;
+    height: auto;
     opacity: 0;
     pointer-events: none;
 }
 
-.category-card .hover-img {
-    top: auto;
-    bottom: 1.25vw;
-    left: 1.25vw;
-    width: calc(100% - 2.5vw);
+.logo-box .hover-img,
+.pearl-layer .hover-img,
+.bg-logo-wrapper .hover-img,
+.boxes-wrapper .hover-img,
+.bottom-logo-wrapper .hover-img {
+    top: 0;
+    left: 0;
 }
 
 .logo-box:hover .main-img,
@@ -395,7 +398,7 @@ body {
         font-size: 1.56vw;
     }
 
-    .category-img,
+    .category-card .main-img,
     .category-card .hover-img {
         bottom: 1.5vw;
         left: 1.5vw;
