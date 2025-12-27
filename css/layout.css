@@ -197,6 +197,7 @@ body {
     position: absolute;
     left: 1.25vw;
     bottom: 1.25vw;
+    top: auto;
     width: calc(100% - 2.5vw);
     height: auto;
     transition: opacity 0.5s ease;
@@ -397,6 +398,7 @@ body {
 
     .category-img,
     .category-card .hover-img {
+        top: auto;
         bottom: 1.5vw;
         left: 1.5vw;
         width: calc(100% - 3vw);
