@@ -31,18 +31,6 @@
     }
 }
 
-@keyframes slideFromRightCenter {
-    from {
-        opacity: 0;
-        transform: translateX(calc(-50% + 200px));
-    }
-
-    to {
-        opacity: 1;
-        transform: translateX(-50%);
-    }
-}
-
 body {
     margin: 0;
     padding: 0;
@@ -84,6 +72,16 @@ body {
     animation: slideFromRight 2s ease-out forwards;
 }
 
+.pearl-layer {
+    position: absolute;
+    right: 1.48vw;
+    top: 10.07vw;
+    width: 74.37vw;
+    height: 58.59vw;
+    z-index: 10;
+    animation: slideFromRight 2s ease-out forwards;
+}
+
 .hero-title {
     position: absolute;
     top: 6.01vw;
@@ -93,7 +91,6 @@ body {
     font-size: 2.26vw;
     color: #000000;
     line-height: 1.1;
-    animation: slideFromRight 2s ease-out forwards;
 }
 
 .info-badge {
@@ -107,23 +104,13 @@ body {
     padding: 2.34vw;
     display: flex;
     align-items: center;
-    animation: slideFromRight 2s ease-out forwards;
 }
 
 .info-text {
     font-family: 'ArialCustom', sans-serif;
     font-size: 1.25vw;
     color: #000000;
-}
-
-.pearl-layer {
-    position: absolute;
-    right: 1.48vw;
-    top: 10.07vw;
-    width: 74.37vw;
-    height: 58.59vw;
-    z-index: 10;
-    animation: slideFromRight 2s ease-out forwards;
+    line-height: 1.3;
 }
 
 .mission-canvas {
@@ -136,6 +123,7 @@ body {
     top: 0;
     font-family: 'ArialCustom', sans-serif;
     font-size: 2.26vw;
+    line-height: 1.2;
     max-width: 62.5vw;
     animation: slideFromLeft 2s ease-out forwards;
 }
@@ -181,11 +169,10 @@ body {
 
 .category-card .main-img,
 .category-card .hover-img {
-    position: absolute !important;
-    left: 1.25vw !important;
-    bottom: 1.25vw !important;
-    top: auto !important;
-    width: calc(100% - 2.5vw) !important;
+    position: absolute;
+    left: 1.25vw;
+    bottom: 1.25vw;
+    width: calc(100% - 2.5vw);
     height: auto;
     display: block;
     transition: opacity 0.5s ease;
@@ -202,7 +189,6 @@ body {
     font-family: 'ArialCustom', sans-serif;
     font-size: 2.26vw;
     z-index: 10;
-    animation: slideFromLeft 2s ease-out forwards;
 }
 
 .bg-logo-wrapper,
@@ -358,9 +344,9 @@ body {
 
     .category-card .main-img,
     .category-card .hover-img {
-        bottom: 1.5vw !important;
-        left: 1.5vw !important;
-        width: calc(100% - 3vw) !important;
+        bottom: 1.5vw;
+        left: 1.5vw;
+        width: calc(100% - 3vw);
     }
 
     .bottom-logo-wrapper {
