@@ -31,18 +31,6 @@
     }
 }
 
-@keyframes slideFromRightCenter {
-    from {
-        opacity: 0;
-        transform: translateX(calc(-50% + 200px));
-    }
-
-    to {
-        opacity: 1;
-        transform: translateX(-50%);
-    }
-}
-
 body {
     margin: 0;
     padding: 0;
@@ -103,7 +91,6 @@ body {
     font-size: 2.26vw;
     color: #000000;
     line-height: 1.1;
-    animation: slideFromRight 2s ease-out forwards;
 }
 
 .info-badge {
@@ -117,7 +104,6 @@ body {
     padding: 2.34vw;
     display: flex;
     align-items: center;
-    animation: slideFromRight 2s ease-out forwards;
 }
 
 .info-text {
@@ -139,7 +125,6 @@ body {
     font-size: 2.26vw;
     line-height: 1.2;
     max-width: 62.5vw;
-    animation: slideFromLeft 2s ease-out forwards;
 }
 
 .mission-title {
@@ -148,7 +133,6 @@ body {
     top: 4.6vw;
     font-family: 'ArialCustom', sans-serif;
     font-size: 2.26vw;
-    animation: slideFromLeft 2s ease-out forwards;
 }
 
 .cards-container {
@@ -165,20 +149,7 @@ body {
     height: 29.68vw;
     background-color: var(--card-color);
     border-radius: 1.95vw;
-    animation: slideFromRight 2s ease-out forwards;
     transition: transform 0.5s ease;
-}
-
-.category-card:nth-child(1) {
-    animation-delay: 0.2s;
-}
-
-.category-card:nth-child(2) {
-    animation-delay: 0.4s;
-}
-
-.category-card:nth-child(3) {
-    animation-delay: 0.6s;
 }
 
 .category-card:hover {
@@ -193,14 +164,29 @@ body {
     font-size: 1.25vw;
 }
 
-.category-img {
+.category-img,
+.category-card .hover-img {
     position: absolute;
-    left: 1.25vw;
+    left: 50%;
+    transform: translateX(-50%);
     bottom: 1.25vw;
-    top: auto;
-    width: calc(100% - 2.5vw);
+    width: 85%;
     height: auto;
+    top: auto;
     transition: opacity 0.5s ease;
+}
+
+.category-card .hover-img {
+    opacity: 0;
+    z-index: 2;
+}
+
+.category-card:hover .main-img {
+    opacity: 0;
+}
+
+.category-card:hover .hover-img {
+    opacity: 1;
 }
 
 .gadgets-canvas {
@@ -214,7 +200,6 @@ body {
     font-family: 'ArialCustom', sans-serif;
     font-size: 2.26vw;
     z-index: 10;
-    animation: slideFromLeft 2s ease-out forwards;
 }
 
 .bg-logo-wrapper,
@@ -234,7 +219,7 @@ body {
     top: 1.71vw;
     width: 110vw;
     z-index: 5;
-    transition: transform 1s ease;
+    transition: transform 0.5s ease;
 }
 
 .bottom-logo-wrapper {
@@ -243,36 +228,33 @@ body {
     bottom: 7.18vw;
     width: 46.79vw;
     z-index: 10;
-    animation: slideFromLeft 2s ease-out forwards;
 }
 
 .main-img,
-.hover-img {
+.logo-box .hover-img,
+.pearl-layer .hover-img,
+.bg-logo-wrapper .hover-img,
+.boxes-wrapper .hover-img,
+.bottom-logo-wrapper .hover-img {
     width: 100%;
     height: auto;
     display: block;
     transition: opacity 0.5s ease;
 }
 
-.hover-img {
+.logo-box .hover-img,
+.pearl-layer .hover-img,
+.bg-logo-wrapper .hover-img,
+.boxes-wrapper .hover-img,
+.bottom-logo-wrapper .hover-img {
     position: absolute;
     top: 0;
     left: 0;
     opacity: 0;
-    pointer-events: none;
-}
-
-.category-card .hover-img {
-    position: absolute;
-    top: auto;
-    bottom: 1.25vw;
-    left: 1.25vw;
-    width: calc(100% - 2.5vw);
 }
 
 .logo-box:hover .main-img,
 .pearl-layer:hover .main-img,
-.category-card:hover .main-img,
 .bg-logo-wrapper:hover .main-img,
 .boxes-wrapper:hover .main-img,
 .bottom-logo-wrapper:hover .main-img {
@@ -281,7 +263,6 @@ body {
 
 .logo-box:hover .hover-img,
 .pearl-layer:hover .hover-img,
-.category-card:hover .hover-img,
 .bg-logo-wrapper:hover .hover-img,
 .boxes-wrapper:hover .hover-img,
 .bottom-logo-wrapper:hover .hover-img {
@@ -310,34 +291,6 @@ body {
         top: 12.63vw;
     }
 
-    .hero-title {
-        font-size: 3.12vw;
-    }
-
-    .pearl-layer {
-        width: 76.56vw;
-        height: 55.2vw;
-        top: 8.59vw;
-    }
-
-    .info-badge {
-        width: 32.16vw;
-        height: 11.58vw;
-    }
-
-    .info-text {
-        font-size: 1.43vw;
-    }
-
-    .mission-canvas {
-        height: 46.22vw;
-    }
-
-    .mission-desc,
-    .mission-title {
-        font-size: 2.08vw;
-    }
-
     .cards-container {
         top: 13.28vw;
         left: 3.25vw;
@@ -354,36 +307,6 @@ body {
         height: 71.56vw;
     }
 
-    .logo-box {
-        width: 43.75vw;
-        left: 3.43vw;
-        top: 8.12vw;
-    }
-
-    .hero-card {
-        width: 93.12vw;
-        height: 47.18vw;
-        left: 3.43vw;
-        top: 13.75vw;
-    }
-
-    .hero-title {
-        font-size: 3.12vw;
-    }
-
-    .info-text {
-        font-size: 1.25vw;
-    }
-
-    .mission-canvas {
-        height: 65.93vw;
-    }
-
-    .mission-desc,
-    .mission-title {
-        font-size: 3.12vw;
-    }
-
     .cards-container {
         top: 26.87vw;
     }
@@ -393,21 +316,9 @@ body {
         height: 28.75vw;
     }
 
-    .category-name {
-        font-size: 1.56vw;
-    }
-
     .category-img,
     .category-card .hover-img {
-        top: auto;
+        width: 90%;
         bottom: 1.5vw;
-        left: 1.5vw;
-        width: calc(100% - 3vw);
-    }
-
-    .bottom-logo-wrapper {
-        width: 43.75vw;
-        bottom: 7.81vw;
-        right: 3.43vw;
     }
 }
