@@ -150,6 +150,7 @@ body {
     background-color: var(--card-color);
     border-radius: 1.95vw;
     transition: transform 0.5s ease;
+    overflow: hidden;
 }
 
 .category-card:hover {
@@ -162,6 +163,7 @@ body {
     top: 2.57vw;
     font-family: 'ArialCustom', sans-serif;
     font-size: 1.25vw;
+    z-index: 10;
 }
 
 .category-img,
@@ -173,14 +175,12 @@ body {
     width: calc(100% - 2.5vw);
     height: auto;
     top: auto;
-    display: block;
     transition: opacity 0.5s ease;
 }
 
 .category-card .hover-img {
     opacity: 0;
-    z-index: 2;
-    pointer-events: none;
+    z-index: 5;
 }
 
 .category-card:hover .main-img {
@@ -232,7 +232,12 @@ body {
     z-index: 10;
 }
 
-.main-img {
+.main-img,
+.logo-box .hover-img,
+.pearl-layer .hover-img,
+.bg-logo-wrapper .hover-img,
+.boxes-wrapper .hover-img,
+.bottom-logo-wrapper .hover-img {
     width: 100%;
     height: auto;
     display: block;
@@ -247,9 +252,7 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
     opacity: 0;
-    transition: opacity 0.5s ease;
 }
 
 .logo-box:hover .main-img,
