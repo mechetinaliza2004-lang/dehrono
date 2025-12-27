@@ -1,10 +1,13 @@
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-:root {
-    --bg-color: #A2A1A1;
-    --card-color: #D9D9D9;
+body {
+    width: 100%;
+    background-color: #A2A1A1;
+    overflow-x: hidden;
 }
 
 @keyframes slideFromRight {
@@ -31,14 +34,6 @@
     }
 }
 
-body {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    background-color: var(--bg-color);
-    overflow-x: hidden;
-}
-
 .main-canvas,
 .mission-canvas,
 .gadgets-canvas {
@@ -46,10 +41,6 @@ body {
     width: 100vw;
     margin: 0 auto;
     overflow: hidden;
-}
-
-.main-canvas {
-    height: 69.84vw;
 }
 
 .logo-box {
@@ -67,7 +58,7 @@ body {
     height: 50vw;
     left: 4.68vw;
     top: 14.29vw;
-    background-color: var(--card-color);
+    background-color: #D9D9D9;
     border-radius: 3.12vw;
     z-index: 1;
     animation: slideFromRight 2s ease-out forwards;
@@ -161,7 +152,7 @@ body {
     position: relative;
     width: 25.54vw;
     height: 29.68vw;
-    background-color: var(--card-color);
+    background-color: #D9D9D9;
     border-radius: 1.95vw;
     animation: slideFromRight 2s ease-out forwards;
     transition: transform 0.5s ease;
@@ -233,7 +224,8 @@ body {
 }
 
 .gadgets-canvas {
-    height: 76.87vw;
+    height: 90vw;
+    position: relative;
 }
 
 .gadgets-subtitle {
@@ -263,18 +255,18 @@ body {
 }
 
 .boxes-wrapper {
-    top: 1.71vw;
+    top: 20vw;
     width: 110vw;
-    z-index: 5;
+    z-index: 2;
     transition: transform 1s ease;
 }
 
 .bottom-logo-wrapper {
     position: absolute;
     right: 4.6vw;
-    bottom: 7.18vw;
+    bottom: 2vw;
     width: 46.79vw;
-    z-index: 10;
+    z-index: 3;
     animation: slideFromLeft 2s ease-out forwards;
 }
 
@@ -319,13 +311,21 @@ body {
     transform: translateX(-50%) scale(1.05);
 }
 
-@media (max-width: 1024px) {
+@media screen and (max-width: 1024px) {
     .hero-title {
         font-size: 3vw;
     }
+
+    .boxes-wrapper {
+        top: 22vw;
+    }
+
+    .bottom-logo-wrapper {
+        bottom: 1.5vw;
+    }
 }
 
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
     .main-canvas {
         height: 66.79vw;
     }
@@ -399,11 +399,21 @@ body {
     }
 
     .gadgets-canvas {
-        height: 72.78vw;
+        height: 85vw;
+    }
+
+    .boxes-wrapper {
+        top: 24vw;
+        width: 115vw;
+    }
+
+    .bottom-logo-wrapper {
+        bottom: 1vw;
+        right: 3.25vw;
     }
 }
 
-@media (max-width: 480px) {
+@media screen and (max-width: 480px) {
     .main-canvas {
         height: 71.56vw;
     }
@@ -479,6 +489,17 @@ body {
     }
 
     .gadgets-canvas {
-        height: 83.12vw;
+        height: 95vw;
+    }
+
+    .boxes-wrapper {
+        top: 28vw;
+        width: 120vw;
+    }
+
+    .bottom-logo-wrapper {
+        bottom: 0.5vw;
+        right: 3.43vw;
+        width: 50vw;
     }
 }
