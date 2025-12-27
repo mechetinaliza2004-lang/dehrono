@@ -233,8 +233,7 @@ body {
 }
 
 .gadgets-canvas {
-    height: 90vw;
-    position: relative;
+    height: 76.87vw;
 }
 
 .gadgets-subtitle {
@@ -264,18 +263,18 @@ body {
 }
 
 .boxes-wrapper {
-    top: 20vw;
+    top: 1.71vw;
     width: 110vw;
-    z-index: 2;
+    z-index: 5;
     transition: transform 1s ease;
 }
 
 .bottom-logo-wrapper {
     position: absolute;
     right: 4.6vw;
-    bottom: 2vw;
+    bottom: 7.18vw;
     width: 46.79vw;
-    z-index: 3;
+    z-index: 10;
     animation: slideFromLeft 2s ease-out forwards;
 }
 
@@ -323,14 +322,6 @@ body {
 @media (max-width: 1024px) {
     .hero-title {
         font-size: 3vw;
-    }
-
-    .boxes-wrapper {
-        top: 22vw;
-    }
-
-    .bottom-logo-wrapper {
-        bottom: 1.5vw;
     }
 }
 
@@ -408,17 +399,7 @@ body {
     }
 
     .gadgets-canvas {
-        height: 85vw;
-    }
-
-    .boxes-wrapper {
-        top: 24vw;
-        width: 115vw;
-    }
-
-    .bottom-logo-wrapper {
-        bottom: 1vw;
-        right: 3.25vw;
+        height: 72.78vw;
     }
 }
 
@@ -498,17 +479,6 @@ body {
     }
 
     .gadgets-canvas {
-        height: 95vw;
-    }
-
-    .boxes-wrapper {
-        top: 28vw;
-        width: 120vw;
-    }
-
-    .bottom-logo-wrapper {
-        bottom: 0.5vw;
-        right: 3.43vw;
-        width: 50vw;
+        height: 83.12vw;
     }
 }
