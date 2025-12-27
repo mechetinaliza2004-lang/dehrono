@@ -31,6 +31,18 @@
     }
 }
 
+@keyframes slideFromRightCenter {
+    from {
+        opacity: 0;
+        transform: translateX(calc(-50% + 200px));
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(-50%);
+    }
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -91,6 +103,7 @@ body {
     font-size: 2.26vw;
     color: #000000;
     line-height: 1.1;
+    animation: slideFromRight 2s ease-out forwards;
 }
 
 .info-badge {
@@ -104,6 +117,7 @@ body {
     padding: 2.34vw;
     display: flex;
     align-items: center;
+    animation: slideFromRight 2s ease-out forwards;
 }
 
 .info-text {
@@ -155,6 +169,18 @@ body {
     transition: transform 0.5s ease;
 }
 
+.category-card:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+.category-card:nth-child(2) {
+    animation-delay: 0.4s;
+}
+
+.category-card:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
 .category-card:hover {
     transform: scale(1.05);
 }
@@ -167,14 +193,12 @@ body {
     font-size: 1.25vw;
 }
 
-.category-card .main-img,
-.category-card .hover-img {
+.category-img {
     position: absolute;
     left: 1.25vw;
     bottom: 1.25vw;
     width: calc(100% - 2.5vw);
     height: auto;
-    display: block;
     transition: opacity 0.5s ease;
 }
 
@@ -189,6 +213,7 @@ body {
     font-family: 'ArialCustom', sans-serif;
     font-size: 2.26vw;
     z-index: 10;
+    animation: slideFromLeft 2s ease-out forwards;
 }
 
 .bg-logo-wrapper,
@@ -220,8 +245,11 @@ body {
     animation: slideFromLeft 2s ease-out forwards;
 }
 
-.main-img {
-    opacity: 1;
+.main-img,
+.hover-img {
+    width: 100%;
+    height: auto;
+    display: block;
     transition: opacity 0.5s ease;
 }
 
@@ -229,19 +257,15 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
     opacity: 0;
     pointer-events: none;
-    transition: opacity 0.5s ease;
 }
 
-.logo-box .hover-img,
-.pearl-layer .hover-img,
-.bg-logo-wrapper .hover-img,
-.boxes-wrapper .hover-img,
-.bottom-logo-wrapper .hover-img {
-    top: 0;
-    left: 0;
+.category-card .hover-img {
+    top: auto;
+    bottom: 1.25vw;
+    left: 1.25vw;
+    width: calc(100% - 2.5vw);
 }
 
 .logo-box:hover .main-img,
@@ -294,6 +318,19 @@ body {
         top: 8.59vw;
     }
 
+    .info-badge {
+        width: 32.16vw;
+        height: 11.58vw;
+    }
+
+    .info-text {
+        font-size: 1.43vw;
+    }
+
+    .mission-canvas {
+        height: 46.22vw;
+    }
+
     .mission-desc,
     .mission-title {
         font-size: 2.08vw;
@@ -328,6 +365,18 @@ body {
         top: 13.75vw;
     }
 
+    .hero-title {
+        font-size: 3.12vw;
+    }
+
+    .info-text {
+        font-size: 1.25vw;
+    }
+
+    .mission-canvas {
+        height: 65.93vw;
+    }
+
     .mission-desc,
     .mission-title {
         font-size: 3.12vw;
@@ -342,7 +391,11 @@ body {
         height: 28.75vw;
     }
 
-    .category-card .main-img,
+    .category-name {
+        font-size: 1.56vw;
+    }
+
+    .category-img,
     .category-card .hover-img {
         bottom: 1.5vw;
         left: 1.5vw;
