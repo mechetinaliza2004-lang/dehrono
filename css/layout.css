@@ -73,12 +73,6 @@ body {
     animation: slideFromLeft 2s ease-out forwards;
 }
 
-.logo-img {
-    width: 100%;
-    display: block;
-    transition: opacity 0.5s ease;
-}
-
 .hero-card {
     position: absolute;
     width: 90.54vw;
@@ -98,15 +92,7 @@ body {
     width: 74.37vw;
     height: 58.59vw;
     z-index: 10;
-    pointer-events: none;
     animation: slideFromRight 2s ease-out forwards;
-}
-
-.pearl-img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    transition: opacity 0.5s ease;
 }
 
 .hero-title {
@@ -143,7 +129,6 @@ body {
     color: #000000;
     line-height: 1.3;
     margin: 0;
-    animation: slideFromRight 2s ease-out forwards;
 }
 
 .mission-canvas {
@@ -191,8 +176,7 @@ body {
     background-color: var(--card-color);
     border-radius: 1.95vw;
     animation: slideFromRight 2s ease-out forwards;
-    transition: transform 0.5s ease, background-color 0.5s ease;
-    cursor: pointer;
+    transition: transform 0.5s ease;
 }
 
 .category-card:nth-child(1) {
@@ -211,35 +195,14 @@ body {
     transform: scale(1.05);
 }
 
-.category-img {
+.category-name {
     position: absolute;
     left: 1.25vw;
-    bottom: 1.25vw;
-    width: calc(100% - 2.5vw);
-    height: auto;
-    display: block;
-    transition: opacity 0.5s ease;
-}
-
-.hover-img {
-    position: absolute;
-    opacity: 0;
-    transition: opacity 0.5s ease;
-    pointer-events: none;
-}
-
-.logo-box:hover .main-img,
-.pearl-layer:hover .main-img,
-.category-card:hover .main-img,
-.gadgets-canvas:hover .main-img {
-    opacity: 0;
-}
-
-.logo-box:hover .hover-img,
-.pearl-layer:hover .hover-img,
-.category-card:hover .hover-img,
-.gadgets-canvas:hover .hover-img {
-    opacity: 1;
+    top: 2.57vw;
+    font-family: 'ArialCustom', sans-serif;
+    font-size: 1.25vw;
+    font-weight: 400;
+    color: #000000;
 }
 
 .gadgets-canvas {
@@ -259,43 +222,73 @@ body {
     animation: slideFromLeft 2s ease-out forwards;
 }
 
-.bg-logo {
+.bg-logo-wrapper,
+.boxes-wrapper {
     position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.bg-logo-wrapper {
     top: 7.42vw;
-    left: 50%;
     width: 101vw;
-    height: auto;
     z-index: 1;
-    transform: translateX(-50%);
-    animation: slideFromRightCenter 2s ease-out forwards;
-    transition: opacity 0.5s ease;
 }
 
-.boxes-img {
-    position: absolute;
+.boxes-wrapper {
     top: 1.71vw;
-    left: 50%;
     width: 110vw;
-    height: auto;
     z-index: 5;
-    pointer-events: none;
-    transform: translateX(-50%);
-    animation: slideFromRightCenter 2s ease-out forwards;
-    transition: transform 1s ease, opacity 0.5s ease;
+    transition: transform 1s ease;
 }
 
-.gadgets-canvas:hover .boxes-img.main-img {
-    transform: translateX(-50%) scale(1.05);
-}
-
-.bottom-logo {
+.bottom-logo-wrapper {
     position: absolute;
     right: 4.6vw;
     bottom: 7.18vw;
     width: 46.79vw;
-    height: auto;
     z-index: 10;
     animation: slideFromLeft 2s ease-out forwards;
+}
+
+.main-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: opacity 0.5s ease;
+}
+
+.hover-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    pointer-events: none;
+}
+
+.logo-box:hover .main-img,
+.pearl-layer:hover .main-img,
+.category-card:hover .main-img,
+.bg-logo-wrapper:hover .main-img,
+.boxes-wrapper:hover .main-img,
+.bottom-logo-wrapper:hover .main-img {
+    opacity: 0;
+}
+
+.logo-box:hover .hover-img,
+.pearl-layer:hover .hover-img,
+.category-card:hover .hover-img,
+.bg-logo-wrapper:hover .hover-img,
+.boxes-wrapper:hover .hover-img,
+.bottom-logo-wrapper:hover .hover-img {
+    opacity: 1;
+}
+
+.boxes-wrapper:hover {
+    transform: translateX(-50%) scale(1.05);
 }
 
 @media (max-width: 1024px) {
@@ -375,10 +368,6 @@ body {
     .gadgets-canvas {
         height: 72.78vw;
     }
-
-    .boxes-img {
-        width: 113.4vw;
-    }
 }
 
 @media (max-width: 480px) {
@@ -453,21 +442,5 @@ body {
 
     .gadgets-canvas {
         height: 83.12vw;
-    }
-
-    .bg-logo {
-        width: 101.8vw;
-        top: 13.75vw;
-    }
-
-    .boxes-img {
-        width: 118.75vw;
-        top: 10.31vw;
-    }
-
-    .bottom-logo {
-        width: 43.75vw;
-        bottom: 7.81vw;
-        right: 3.43vw;
     }
 }
