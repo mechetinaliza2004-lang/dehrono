@@ -263,6 +263,7 @@ body {
 }
 
 .category-card .hover-img {
+    position: absolute;
     top: auto;
     bottom: 1.25vw;
     left: 1.25vw;
